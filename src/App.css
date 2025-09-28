@@ -1212,7 +1212,7 @@ body, html {
     justify-content: center;
     padding-left: 0;
     padding-right: 0;
-    margin-top: 0; /* Ingen marginal */
+    margin-top: -20px; /* Ingen marginal */
   }
   
   .background-title {
@@ -1224,7 +1224,7 @@ body, html {
   .background-text {
     text-align: center;
     max-width: 90%;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin: 0; /* Inga marginaler alls */
   }
   
@@ -1436,27 +1436,29 @@ body, html {
     margin-top: -1rem !important;
   }
   
-  /* News section - kompakt och horisontell layout */
+  /* News section - vertikal layout med titel överst */
   .news-layout {
     padding: 1rem 0.8rem !important;
-    gap: 0.5rem !important;
+    gap: 0.8rem !important;
     text-align: center !important;
-    flex-direction: row !important;
+    flex-direction: column !important;
     align-items: center !important;
+    justify-content: center !important;
     transform: scale(0.85) !important;
     transform-origin: center !important;
   }
   
   .news-title-container {
-    flex: 0.4 !important;
-    margin-right: 0.5rem !important;
+    flex: none !important;
+    margin-right: 0 !important;
+    margin-bottom: 0.5rem !important;
   }
   
   .news-content-container {
-    flex: 0.6 !important;
-    justify-content: flex-start !important;
+    flex: none !important;
+    justify-content: center !important;
     align-items: center !important;
-    text-align: left !important;
+    text-align: center !important;
   }
   
   .news-title {
@@ -1469,22 +1471,35 @@ body, html {
     font-size: 0.85rem !important;
     line-height: 1.2 !important;
     max-width: 100% !important;
-    text-align: left !important;
+    text-align: center !important;
   }
   
-  /* About section - zoomad ut för scroll-hint */
+  /* About section - vertikal layout med titel överst */
   .about-layout {
     padding: 1rem 0.8rem !important;
-    gap: 0.3rem !important;
+    gap: 0.8rem !important;
     text-align: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
     transform: scale(0.8) !important;
     transform-origin: center !important;
   }
   
+  .about-title-container {
+    flex: none !important;
+    margin-bottom: 0.5rem !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
+  
   .about-content-container {
+    flex: none !important;
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   
   .about-title {
@@ -1501,18 +1516,33 @@ body, html {
     text-align: center !important;
   }
   
-  /* Background section - zoomad ut för scroll-hint */
+  /* Background section - vertikal layout med titel överst */
   .background-layout {
     padding: 1rem 0.8rem !important;
-    gap: 0 !important;
-    justify-content: center;
-    align-items: center;
+    gap: 0.8rem !important;
+    text-align: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
     transform: scale(0.75) !important;
     transform-origin: center !important;
   }
   
   .background-title-container {
-    margin-bottom: 0.3rem !important;
+    flex: none !important;
+    margin-bottom: 0.5rem !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .background-content-container {
+    flex: none !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: 0 !important;
   }
   
   .background-title {

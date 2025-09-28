@@ -532,6 +532,7 @@ body, html {
   text-align: left;
   margin: 0;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  
 }
 
 /* Contact Section */
@@ -859,13 +860,48 @@ body, html {
 @media screen and (max-width: 768px) {
   body, html {
     -webkit-text-size-adjust: 100%;
-    touch-action: manipulation;
+    touch-action: pan-y;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   
   .app {
     width: 100vw;
     height: 100vh;
     height: 100dvh; /* Dynamic viewport height */
+    touch-action: pan-y;
+    overflow: hidden;
+  }
+  
+  /* Improve touch responsiveness for all interactive elements */
+  .indicator,
+  .social-link,
+  .form-button {
+    touch-action: manipulation;
+  }
+  
+  /* Prevent text selection during swipes */
+  * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Allow text selection in form inputs */
+  .form-input,
+  .form-textarea {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
   }
 }
 
@@ -917,18 +953,29 @@ body, html {
   }
   
   .news-title,
-  .about-title,
-  .background-title {
+  .about-title {
     font-size: 2rem !important;
     margin-bottom: 1.5rem !important;
   }
   
+  .background-title {
+    font-size: 2rem !important;
+    margin-bottom: 0 !important; /* Ingen marginal för background-title */
+  }
+  
   .news-text,
-  .about-text,
+  .about-text {
+    font-size: 1.3rem !important;
+    line-height: 1.5 !important;
+    max-width: 95% !important;
+  }
+  
   .background-text {
     font-size: 1.3rem !important;
     line-height: 1.5 !important;
     max-width: 95% !important;
+    padding: 12px;
+    margin-top: -500px !important; /* Ingen topp-marginal för background-text */
   }
 }
 
@@ -975,22 +1022,34 @@ body, html {
   }
   
   .indicator {
-    width: 8px !important;
-    height: 8px !important;
-    margin: 6px 0 !important;
+    width: 12px !important;
+    height: 12px !important;
+    margin: 8px 0 !important;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  
+  .indicator:hover {
+    transform: scale(1.2);
   }
 }
 
 /* Scroll hint and credits mobile */
 @media screen and (max-width: 768px) {
   .scroll-hint {
-    bottom: 1rem;
+    bottom: 4rem; /* Moved higher to avoid collision */
     font-size: 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: auto;
   }
   
   .designer-credit {
     bottom: 0.5rem;
     right: 0.5rem;
+    left: 0.5rem;
+    text-align: center;
     font-size: 0.7rem;
     padding: 0.3rem 0.5rem;
   }
@@ -1121,7 +1180,7 @@ body, html {
   
   .background-layout {
     flex-direction: column;
-    gap: 3rem;
+    gap: 0; /* Inget gap alls mellan elementen */
     padding: 2rem 0;
     text-align: center;
   }
@@ -1129,23 +1188,27 @@ body, html {
   .background-title-container {
     justify-content: center;
     padding-right: 0;
+    margin-bottom: 0; /* Ingen marginal */
   }
   
   .background-content-container {
     justify-content: center;
     padding-left: 0;
     padding-right: 0;
+    margin-top: 0; /* Ingen marginal */
   }
   
   .background-title {
     font-size: 2.5rem;
     text-align: center;
+    margin: 0; /* Inga marginaler alls */
   }
   
   .background-text {
     text-align: center;
     max-width: 90%;
     font-size: 1.4rem;
+    margin: 0; /* Inga marginaler alls */
   }
   
   .contact-layout {
@@ -1230,11 +1293,13 @@ body, html {
   
   .background-title {
     font-size: 2rem;
+    margin: 0; /* Ingen marginal för mindre skärmar */
   }
   
   .background-text {
     font-size: 1.2rem;
     line-height: 1.6;
+    margin: 0; /* Ingen marginal för mindre skärmar */
   }
 }
 
@@ -1260,6 +1325,40 @@ body, html {
     background-position: center center;
     background-attachment: scroll;
     background-color: #000;
+  }
+}
+
+/* iPhone 13 specific optimizations */
+@media screen and (max-width: 414px) and (max-height: 896px) {
+  body, html {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+  }
+  
+  .app {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  .indicator {
+    width: 14px !important;
+    height: 14px !important;
+    margin: 10px 0 !important;
+  }
+  
+  .section-indicators {
+    right: 1rem !important;
+  }
+  
+  .scroll-hint {
+    bottom: 4.5rem; /* Higher to avoid collision with designer credit */
+    font-size: 0.85rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: auto;
   }
 }
   

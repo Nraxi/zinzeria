@@ -12,7 +12,10 @@ function App() {
 
   useEffect(() => {
     let accumulatedDelta = 0
+    let touchStartY = 0
+    let touchEndY = 0
     const threshold = 100 // Adjust sensitivity
+    const touchThreshold = 50 // Touch swipe threshold
 
     const handleWheel = (event) => {
       event.preventDefault()
@@ -37,12 +40,42 @@ function App() {
       }
     }
 
+    const handleTouchStart = (event) => {
+      touchStartY = event.touches[0].clientY
+    }
+
+    const handleTouchMove = (event) => {
+      // Prevent default scrolling behavior
+      event.preventDefault()
+    }
+
+    const handleTouchEnd = (event) => {
+      touchEndY = event.changedTouches[0].clientY
+      const deltaY = touchStartY - touchEndY
+      
+      if (Math.abs(deltaY) > touchThreshold) {
+        if (deltaY > 0 && currentSection < totalSections - 1) {
+          // Swipe up - go to next section
+          setCurrentSection(prev => prev + 1)
+        } else if (deltaY < 0 && currentSection > 0) {
+          // Swipe down - go to previous section
+          setCurrentSection(prev => prev - 1)
+        }
+      }
+    }
+
     window.addEventListener('wheel', handleWheel, { passive: false })
     window.addEventListener('keydown', handleKeyDown)
+    window.addEventListener('touchstart', handleTouchStart, { passive: true })
+    window.addEventListener('touchmove', handleTouchMove, { passive: false })
+    window.addEventListener('touchend', handleTouchEnd, { passive: true })
     
     return () => {
       window.removeEventListener('wheel', handleWheel)
       window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('touchstart', handleTouchStart)
+      window.removeEventListener('touchmove', handleTouchMove)
+      window.removeEventListener('touchend', handleTouchEnd)
     }
   }, [currentSection])
 
@@ -146,7 +179,7 @@ function App() {
       type: 'content',
       layout: 'image-left',
       title: 'Bassist.',
-      text: 'Iris <br /><br />Född 1990 och uppvuxen kring Göteborgs trakterna.<br /><br />Favorit band: Rhapsody',
+      text: 'Open slot',
       image: `${import.meta.env.BASE_URL}assets/logo.jpg`
     },
       {
@@ -338,7 +371,7 @@ function App() {
       </div>
       
       <div className="scroll-hint">
-        <p>Scroll or use arrow keys to navigate</p>
+        <p>Scroll, swipe, or use arrow keys to navigate</p>
       </div>
       
       <div className="designer-credit">

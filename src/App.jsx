@@ -361,12 +361,25 @@ function App() {
       )}
       
       <div className="section-indicators">
-        {sections.map((_, index) => (
+        {sections.map((section, index) => (
           <div 
             key={index}
             className={`indicator ${currentSection === index ? 'active' : ''}`}
             onClick={() => setCurrentSection(index)}
-          />
+            title={section.type === 'landing' ? 'Hem' : 
+                   section.type === 'news' ? 'Nyheter' : 
+                   section.type === 'about' ? 'Om oss' : 
+                   section.type === 'background' ? 'Bakgrund till bandet' : 
+                   section.type === 'contact' ? 'Kontakt' : section.title}
+          >
+            <span className="indicator-tooltip">
+              {section.type === 'landing' ? 'Hem' : 
+               section.type === 'news' ? 'Nyheter' : 
+               section.type === 'about' ? 'Om oss' : 
+               section.type === 'background' ? 'Bakgrund till bandet' : 
+               section.type === 'contact' ? 'Kontakt' : section.title}
+            </span>
+          </div>
         ))}
       </div>
       

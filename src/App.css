@@ -975,7 +975,7 @@ body, html {
     line-height: 1.5 !important;
     max-width: 95% !important;
     padding: 12px;
-    margin-top: -500px !important; /* Ingen topp-marginal för background-text */
+    margin-top: -220px !important; /* Ingen topp-marginal för background-text */
   }
 }
 

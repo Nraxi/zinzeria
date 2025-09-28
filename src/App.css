@@ -1151,7 +1151,7 @@ body, html {
   
   .news-content-container {
     justify-content: center;
-    padding-left: 0;
+    padding-left: 55px;
   }
   
   .news-title {
@@ -1162,6 +1162,7 @@ body, html {
   .news-text {
     text-align: center;
     max-width: 90%;
+    margin-left: 20px;
     font-size: 1.4rem;
   }
   
@@ -1584,7 +1585,7 @@ body, html {
   }
   
   .scroll-hint {
-    bottom: 5.5rem !important;
+    bottom: 2.5rem !important;
     font-size: 0.7rem !important;
     left: 50% !important;
     transform: translateX(-50%) !important;

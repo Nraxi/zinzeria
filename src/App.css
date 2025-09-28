@@ -1444,6 +1444,8 @@ body, html {
   
   .news-content-container {
     justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
   }
   
   .news-title {
@@ -1462,6 +1464,13 @@ body, html {
   .about-layout {
     padding: 1.5rem 1rem !important;
     gap: 0.5rem !important;
+    text-align: center !important;
+  }
+  
+  .about-content-container {
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
   }
   
   .about-title {
@@ -1474,6 +1483,7 @@ body, html {
     line-height: 1.4 !important;
     max-width: 95% !important;
     margin-top: 0 !important;
+    text-align: center !important;
   }
   
   /* Background section - optimerat för denna storlek */
@@ -1490,7 +1500,7 @@ body, html {
   
   .background-title {
     font-size: 1.7rem !important;
-    margin: 10px 0 0 0 !important;
+    margin: 5px 0 0 0 !important;
     line-height: 1.2 !important;
   }
   
@@ -1501,29 +1511,31 @@ body, html {
     max-width: 95% !important;
   }
   
-  /* Contact section - mycket kompakt för denna storlek */
+  /* Contact section - extremt kompakt för denna storlek */
   .contact-layout {
-    padding: 0.5rem 0.5rem !important;
-    gap: 0.8rem !important;
+    padding: 0.3rem 0.4rem !important;
+    gap: 0.6rem !important;
     justify-content: center !important;
     align-items: center !important;
+    transform: scale(0.9) !important;
+    transform-origin: center !important;
   }
   
   .contact-form-container {
-    max-width: 250px !important;
+    max-width: 220px !important;
     width: 100% !important;
   }
   
   .social-media-container {
-    max-width: 250px !important;
+    max-width: 220px !important;
     width: 100% !important;
   }
   
   .contact-title,
   .social-title {
-    font-size: 1.2rem !important;
-    margin-bottom: 0.5rem !important;
-    line-height: 1.1 !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 0.4rem !important;
+    line-height: 1.05 !important;
   }
   
   .contact-form {
@@ -1531,46 +1543,46 @@ body, html {
   }
   
   .form-group {
-    margin-bottom: 0.7rem !important;
+    margin-bottom: 0.5rem !important;
   }
   
   .form-input,
   .form-textarea {
-    font-size: 13px !important;
-    padding: 0.5rem !important;
-    border-radius: 6px !important;
+    font-size: 12px !important;
+    padding: 0.4rem !important;
+    border-radius: 5px !important;
   }
   
   .form-textarea {
-    min-height: 60px !important;
+    min-height: 50px !important;
     resize: none !important;
   }
   
   .form-button {
-    padding: 0.6rem 1rem !important;
-    font-size: 0.8rem !important;
-    border-radius: 6px !important;
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 5px !important;
   }
   
   .recaptcha-container {
-    margin: 0.7rem 0 !important;
-    transform: scale(0.8) !important;
+    margin: 0.5rem 0 !important;
+    transform: scale(0.7) !important;
     transform-origin: center !important;
   }
   
   .social-icons {
-    gap: 0.4rem !important;
+    gap: 0.3rem !important;
     flex-direction: column !important;
     align-items: center !important;
   }
   
   .social-link {
-    font-size: 0.75rem !important;
-    padding: 0.5rem 0.6rem !important;
-    min-width: 100px !important;
-    max-width: 140px !important;
+    font-size: 0.7rem !important;
+    padding: 0.4rem 0.5rem !important;
+    min-width: 90px !important;
+    max-width: 120px !important;
     width: 100% !important;
-    min-height: 36px !important;
+    min-height: 32px !important;
   }
   
   /* Navigation elements - mindre indikator */
@@ -1585,7 +1597,7 @@ body, html {
   }
   
   .scroll-hint {
-    bottom: 2.5rem !important;
+    bottom: 4rem !important;
     font-size: 0.7rem !important;
     left: 50% !important;
     transform: translateX(-50%) !important;

@@ -975,7 +975,7 @@ body, html {
     line-height: 1.5 !important;
     max-width: 95% !important;
     padding: 12px;
-    margin-top: -220px !important; /* Ingen topp-marginal för background-text */
+    margin-top: 0px !important; /* Ingen topp-marginal för background-text */
   }
 }
 
@@ -1328,7 +1328,246 @@ body, html {
   }
 }
 
-/* iPhone 13 specific optimizations */
+/* Specifik optimering för 146.7 x 71.5 mm (390x844px - iPhone 13) */
+@media screen and (max-width: 390px) and (max-height: 844px) {
+  body, html {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  .app {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    touch-action: pan-y;
+    position: relative;
+  }
+  
+  /* Säkerställ att alla sektioner passar skärmstorleken */
+  .landing-section,
+  .news-section,
+  .about-section,
+  .background-section,
+  .contact-section,
+  .content-section {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    overflow: hidden !important;
+  }
+  
+  /* Bakgrundsbilder optimerade för denna storlek */
+  .landing-section,
+  .news-section,
+  .about-section,
+  .background-section {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: scroll !important;
+    background-repeat: no-repeat !important;
+  }
+  
+  /* Text container optimering */
+  .text-container {
+    padding: 0 0.5rem !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  /* Landing page optimering */
+  .logo {
+    font-size: 2.2rem !important;
+    letter-spacing: 2px !important;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  /* Content layout för denna storlek */
+  .content-layout {
+    padding: 1.5rem 1rem !important;
+    gap: 1.5rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  .content-title {
+    font-size: 1.6rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .content-text {
+    font-size: 1.1rem !important;
+    line-height: 1.4 !important;
+    max-width: 95% !important;
+  }
+  
+  .content-image {
+    width: 260px !important;
+    height: 180px !important;
+    border-radius: 15px !important;
+  }
+  
+  /* News section */
+  .news-layout {
+    padding: 1.5rem 1rem !important;
+    gap: 1rem !important;
+  }
+  
+  .news-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .news-text {
+    font-size: 1.1rem !important;
+    line-height: 1.4 !important;
+    max-width: 95% !important;
+  }
+  
+  /* About section */
+  .about-layout {
+    padding: 1.5rem 1rem !important;
+    gap: 1rem !important;
+  }
+  
+  .about-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .about-text {
+    font-size: 1.1rem !important;
+    line-height: 1.4 !important;
+    max-width: 95% !important;
+  }
+  
+  /* Background section - optimerat för denna storlek */
+  .background-layout {
+    padding: 1.5rem 1rem !important;
+    gap: 0 !important;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .background-title-container {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .background-title {
+    font-size: 1.7rem !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+  }
+  
+  .background-text {
+    font-size: 1.05rem !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+    max-width: 95% !important;
+  }
+  
+  /* Contact section */
+  .contact-layout {
+    padding: 1.5rem 1rem !important;
+    gap: 2rem !important;
+  }
+  
+  .contact-title,
+  .social-title {
+    font-size: 1.6rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .form-input,
+  .form-textarea {
+    font-size: 14px !important;
+    padding: 0.8rem !important;
+  }
+  
+  .form-button {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .social-icons {
+    gap: 0.8rem !important;
+  }
+  
+  .social-link {
+    font-size: 0.9rem !important;
+    padding: 0.7rem 1rem !important;
+    min-width: 140px !important;
+  }
+  
+  /* Navigation elements */
+  .indicator {
+    width: 12px !important;
+    height: 12px !important;
+    margin: 8px 0 !important;
+  }
+  
+  .section-indicators {
+    right: 0.8rem !important;
+  }
+  
+  .scroll-hint {
+    bottom: 4rem !important;
+    font-size: 0.75rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    text-align: center !important;
+    width: auto !important;
+    padding: 0.3rem 0.8rem !important;
+  }
+  
+  .designer-credit {
+    bottom: 0.5rem !important;
+    right: 0.5rem !important;
+    left: 0.5rem !important;
+    text-align: center !important;
+    font-size: 0.65rem !important;
+    padding: 0.25rem 0.4rem !important;
+  }
+  
+  /* Touch optimering för denna storlek */
+  * {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+  }
+  
+  .form-input,
+  .form-textarea {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+  }
+  
+  /* Förbättra touch targets */
+  .indicator {
+    min-width: 24px !important;
+    min-height: 24px !important;
+    cursor: pointer !important;
+    border-radius: 50% !important;
+  }
+  
+  .social-link {
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* iPhone 13 specific optimizations (fallback for slightly larger) */
 @media screen and (max-width: 414px) and (max-height: 896px) {
   body, html {
     -webkit-overflow-scrolling: touch;

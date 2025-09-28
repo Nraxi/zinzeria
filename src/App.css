@@ -993,6 +993,7 @@ body, html {
   .social-media-container {
     width: 100%;
     max-width: 350px;
+    margin-top: 20px;
   }
   
   .contact-title,
@@ -1052,7 +1053,7 @@ body, html {
 /* Scroll hint and credits mobile */
 @media screen and (max-width: 768px) {
   .scroll-hint {
-    bottom: 4rem; /* Moved higher to avoid collision */
+    bottom: 1rem; /* Moved higher to avoid collision */
     font-size: 0.8rem;
     left: 50%;
     transform: translateX(-50%);
@@ -1375,7 +1376,9 @@ body, html {
     height: 100dvh !important;
     overflow: hidden !important;
   }
-  
+    .contact-section{
+      margin-top: 20px;
+    }
   /* Bakgrundsbilder optimerade för denna storlek */
   .landing-section,
   .news-section,

@@ -798,7 +798,7 @@ body, html {
 /* Scroll Hint */
 .scroll-hint {
   position: fixed;
-  bottom: 2rem;
+  bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -1117,7 +1117,7 @@ body, html {
 /* Scroll hint and credits mobile */
 @media screen and (max-width: 768px) {
   .scroll-hint {
-    bottom: 1rem; /* Moved higher to avoid collision */
+    bottom: 3rem;
     font-size: 0.8rem;
     left: 50%;
     transform: translateX(-50%);
@@ -1716,7 +1716,7 @@ body, html {
   }
   
   .scroll-hint {
-    bottom: 4rem !important;
+    bottom: 3rem !important;
     font-size: 0.7rem !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
@@ -1799,7 +1799,7 @@ body, html {
   }
   
   .scroll-hint {
-    bottom: 4.5rem; /* Higher to avoid collision with designer credit */
+    bottom: 3rem;
     font-size: 0.85rem;
     left: 50%;
     transform: translateX(-50%);
@@ -1868,5 +1868,331 @@ body, html {
     max-width: 320px;
     height: auto;
     border-radius: 15px;
+  }
+
+}
+
+/* News Box - Base styles (Desktop 1024px+) */
+.news-box {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 42rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.news-text {
+  line-height: 1.625;
+}
+
+/* Tablet - 768px */
+@media screen and (max-width: 768px) and (min-width: 426px) {
+  /* Background adjustments for tablet */
+  .landing-section,
+  .news-section,
+  .about-section,
+  .background-section {
+    background-size: 100% auto !important;
+    background-position: center center !important;
+    background-attachment: scroll !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .news-box {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 10px;
+    padding: 1.25rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .news-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+}
+
+/* Mobile L - 425px */
+@media screen and (max-width: 425px) and (min-width: 376px) {
+  .news-layout,
+  .about-layout,
+  .background-layout {
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    padding: 1.5rem 1rem !important;
+  }
+
+  .background-layout {
+    gap: 0 !important;
+  }
+
+  .news-title-container,
+  .about-title-container {
+    width: 100%;
+    text-align: center;
+    padding: 0 !important;
+  }
+
+  .news-title,
+  .about-title,
+  .background-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .background-title {
+    margin-top: 9rem !important;
+    margin-bottom: -83px !important;
+    padding: 0 !important;
+    text-align: center;
+  }
+
+  .news-content-container,
+  .about-content-container,
+  .background-content-container {
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .background-content-container {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .news-box {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .news-text,
+  .about-text,
+  .background-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .about-text,
+  .background-text {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .background-text {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+    padding-top: 0.5rem !important;
+  }
+}
+
+/* Mobile M - 375px */
+@media screen and (max-width: 375px) and (min-width: 321px) {
+  .news-layout,
+  .about-layout,
+  .background-layout {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 1.25rem 0.75rem !important;
+  }
+
+  .background-layout {
+    gap: 0 !important;
+  }
+
+  .news-title-container,
+  .about-title-container {
+    width: 100%;
+    text-align: center;
+    padding: 0 !important;
+  }
+
+  .news-title,
+  .about-title,
+  .background-title {
+    font-size: 1.6rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .background-title {
+    margin-top: 9rem !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+  }
+
+  .news-content-container,
+  .about-content-container,
+  .background-content-container {
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .background-content-container {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .news-box {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 8px;
+    padding: 0.875rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .news-text,
+  .about-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .background-text {
+    font-size: 1rem !important;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .about-text,
+  .background-text {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 8px;
+    padding: 0.875rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .background-text {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+    padding-top: 0.4rem !important;
+  }
+}
+
+/* Mobile S - 320px */
+@media screen and (max-width: 320px) {
+  .news-layout,
+  .about-layout,
+  .background-layout {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 1rem 0.5rem !important;
+  }
+
+  .background-layout {
+    gap: 0 !important;
+  }
+
+  .news-title-container,
+  .about-title-container {
+    width: 100%;
+    text-align: center;
+    padding: 0 !important;
+  }
+
+  .news-title,
+  .about-title,
+  .background-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .background-title {
+    margin-top: 9rem !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+  }
+
+  .news-content-container,
+  .about-content-container,
+  .background-content-container {
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .background-content-container {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .news-box {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .news-text,
+  .about-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .background-text {
+    font-size: 1rem !important;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .about-text,
+  .background-text {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .background-text {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+    padding-top: 0.5rem !important;
   }
 }
